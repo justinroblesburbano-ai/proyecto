@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Fit - Catálogo Oficial O/I 2025</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+
+            <img src="img/logo.png" alt="Urban Fit Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hombre">Hombre</a></li>
+            <li><a href="#mujer">Mujer</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li class="cart-link"><a href="#" onclick="openCartModal()"><i class="fas fa-shopping-bag"></i> Carrito (<span id="cart-counter">0</span>)</a></li>
+        </ul>
+    </nav>
+    <div class="catalogo-container">
+        
+        <header>
+            <h1>🌟 Catálogo Esencial Urbano 🌟</h1>
+            <p>Colección urbano para ti 2025. Estilo moderno, cómodo y versátil para el día a día en Colombia. <span class="header-decoration">| CODE |</span></p>
+        </header>
+
+        <div class="seccion" id="hombre">
+            <h2>PARA ÉL (Moda Masculina)</h2>
+            <div class="productos-grid">
+                
+                <div class="producto-card">
+                    <img src="img/camiseta-tech-code.jpg" alt="Camiseta Premium Tech-Code" class="producto-imagen">
+                    <h3>JOGGER CABALLERO "Tech-Code"</h3>
+                    <p class="descripcion">Un básico esencial con un toque moderno y deportivo. **(Parte de la Promo 1)**</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> 100% Algodón Pima. Corte Slim Fit. Colores: Negro, Blanco, Beige.</p>
+                    <span class="precio">$ 70.000 COP</span>
+                    
+                    <label for="color-prod-1" class="color-label">Elige un color:</label>
+                    <select id="color-prod-1" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <label for="talla-prod-1" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-1" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Camiseta Tech-Code', 'color-prod-1', 'talla-prod-1')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Camiseta Tech-Code', 'S, M, L, XL')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/jean-goleador.jpg" alt="Jean Clásico Goleador" class="producto-imagen">
+                    <h3>JEAN ESTILO JOGGER "Clasico"</h3>
+                    <p class="descripcion">El jean perfecto para cualquier ocasión. Comodidad y estilo atemporal. **(Parte de la Promo 1)**</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Denim elástico (Spandex). Silueta Regular Tapered. Color: Azul Índigo claro.</p>
+                    <span class="precio">$ 70.000 COP</span>
+
+                    <label for="color-prod-2" class="color-label">Elige un color:</label>
+                    <select id="color-prod-2" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Azul Índigo Oscuro">Azul Índigo Oscuro</option>
+                        <option value="Negro Clásico">Negro Clásico</option>
+                    </select>
+
+                    <label for="talla-prod-2" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-2" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Jean estilo jogger', 'color-prod-2', 'talla-prod-2')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Jean estilo jogger', '28, 30, 32, 34')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/chaqueta-active-play.jpg" alt="Chaqueta Bomber Active Play" class="producto-imagen">
+                    <h3>CHAQUETA URBAN "Motowear"</h3>
+                    <p class="descripcion">Prenda versátil ideal para un look urbano y proteger del frío.</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Poliéster impermeable, forro acolchado. Colores: Verde Militar, Azul Marino.</p>
+                    <span class="precio">$ 120.000 COP</span>
+
+                    <label for="color-prod-3" class="color-label">Elige un color:</label>
+                    <select id="color-prod-3" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Verde Militar">Verde Militar</option>
+                        <option value="Azul Marino">Azul Marino</option>
+                    </select>
+
+                    <label for="talla-prod-3" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-3" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Chaqueta urban', 'color-prod-3', 'talla-prod-3')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Chaqueta urban', 'M, L, XL')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/sudadera-sport-life.jpg" alt="Sudadera Jogger Sport-Life" class="producto-imagen">
+                    <h3>MODA URBAN OUTFIT "verano"</h3>
+                    <p class="descripcion">Máxima comodidad para actividades o un estilo relajado.</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Algodón perchado suave. Bolsillos con cremallera. Color: Blanco.</p>
+                    <span class="precio">$ 90.000 COP</span>
+                    
+                    <label for="color-prod-4" class="color-label">Elige un color:</label>
+                    <select id="color-prod-4" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Blanco">Blanco </option>
+                        <option value="Negro" >Negro </option>
+                    </select>
+
+                    <label for="talla-prod-4" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-4" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                    
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Moda urban', 'color-prod-4', 'talla-prod-4')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Moda urban', 'S, M, L')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/hoodie-basico-code.jpg" alt="Hoodie Básico Algodón" class="producto-imagen">
+                    <h3>GORRAS URBANAS"Hombre"</h3>
+                    <p class="descripcion">El buzo con capota esencial para las noches de **programación** o estudio.</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Algodón suave. Bolsillo canguro. Capota ajustable. Color: Negro. </p>
+                    <span class="precio">$ 55.000 COP</span>
+                    
+                    <label for="color-prod-5" class="color-label">Elige un color:</label>
+                    <select id="color-prod-5" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Rojo Vino">Rojo Vino</option>
+                    </select>
+                    
+                    <label for="talla-prod-5" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-5" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Gorras urban', 'color-prod-5', 'talla-prod-5')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Gorras urban', 'S, M, XL')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="seccion" id="mujer">
+            <h2>PARA ELLA (Moda Femenina)</h2>
+            <div class="productos-grid">
+                
+                <div class="producto-card">
+                    <img src="img/blusa-flow-code.jpg" alt="Blusa Elegante Flow Code" class="producto-imagen">
+                    <h3>JOGGER MUJER "Urban"</h3>
+                    <p class="descripcion">Elegancia y ligereza para el día a día. **(Parte de la Promo 2)**</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Comodidad son 100% algodon,cintura elastica. Colores: Negro, Estampado.</p>
+                    <span class="precio">$ 70.000 COP</span>
+
+                    <label for="color-prod-6" class="color-label">Elige un color:</label>
+                    <select id="color-prod-6" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Estampado">Estampado </option>
+                    </select>
+
+                    <label for="talla-prod-6" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-6" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Jogger mujer', 'color-prod-6', 'talla-prod-6')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Jogger mujer', 'XS, S, M, L')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/jean-retro-goal.jpg" alt="Jean Bota Campana Retro Goal" class="producto-imagen">
+                    <h3>JOGGER MUJER URBAN "Clasico"</h3>
+                    <p class="descripcion">Silueta en tendencia que estiliza la figura y alarga las piernas. **(Parte de la Promo 1)**</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Denim semielástico. Bota ancha (campana). Tiro alto. Color: Azul Claro Deslavado.</p>
+                    <span class="precio">$ 70.000 COP</span>
+
+                    <label for="color-prod-7" class="color-label">Elige un color:</label>
+                    <select id="color-prod-7" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Azul Claro Deslavado">Azul Claro Deslavado</option>
+                        <option value="Blanco Denim">Blanco Denim</option>
+                    </select>
+                    
+                    <label for="talla-prod-7" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-7" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="26">26</option>
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Jogger urban mujer', 'color-prod-7', 'talla-prod-7')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Jogger urban mujer', '26, 28, 30, 32')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <img src="img/vestido-casual-tech.jpg" alt="Vestido Midi Casual Tech" class="producto-imagen">
+                    <h3>CONJUNTO MABE "Urban"</h3>
+                    <p class="descripcion">Comodidad y estilo en una sola prenda, ideal para un look rápido y pulido. **(Parte de la Promo 2)**</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Tejido de punto Rib (acanalado) elástico. Largo a media pantorrilla. Colores: Morado, Negro.</p>
+                    <span class="precio">$ 100.000 COP</span>
+                    
+                    <label for="color-prod-8" class="color-label">Elige un color:</label>
+                    <select id="color-prod-8" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Mocca">Mocca</option>
+                        <option value="Negro">Negro</option>
+                    </select>
+
+                    <label for="talla-prod-8" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-8" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Conjunto mabe', 'color-prod-8', 'talla-prod-8')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Conjunto mabe', 'S, M, L')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+                
+                 <div class="producto-card">
+                    <img src="img/leggings-active-core.jpg" alt="Leggings Deportivos Active Core" class="producto-imagen">
+                    <h3>CHAQUETA BEISBOLERA "Urban"</h3>
+                    <p class="descripcion">Diseñados para alto rendimiento, brindan soporte y comodidad. (Perfecto para jugar **fútbol**).</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Poliéster reciclado. Secado rápido. Pretina ancha. Color: Verde,amarillo.</p>
+                    <span class="precio">$ 85.000 COP</span>
+                    
+                    <label for="color-prod-9" class="color-label">Elige un color:</label>
+                    <select id="color-prod-9" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                    </select>
+
+                    <label for="talla-prod-9" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-9" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Chaquetas beisboleras', 'color-prod-9', 'talla-prod-9')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Chaquetas beisboleras', 'XS, S, M, L')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+                 
+                 <div class="producto-card">
+                    <img src="img/cardigan-cozy-code.jpg" alt="Cardigan tejido" class="producto-imagen">
+                    <h3>GORRAS MUJER "Urban"</h3>
+                    <p class="descripcion">Un tejido suave y ligero, perfecto para las tardes frescas.</p>
+                    <p class="especificaciones"><strong>Especificaciones:</strong> Tejido de punto fino. Silueta larga y abierta. Colores: Negro, Azul, Blanca,Naranja,Beige.</p>
+                    <span class="precio">$ 55.000 COP</span>
+                    
+                    <label for="color-prod-10" class="color-label">Elige un color:</label>
+                    <select id="color-prod-10" class="color-select">
+                        <option value="">-- Selecciona Color --</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Naranja">Naranja</option>
+                        <option value="azul">Azul</option>
+                        <option value="Blanca">Blanca</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <label for="talla-prod-10" class="color-label">Elige tu talla:</label>
+                    <select id="talla-prod-10" class="color-select">
+                        <option value="">-- Selecciona Talla --</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+
+                    <div class="botones-acciones">
+                        <button class="btn-comprar" onclick="mostrarAlertaCompra('Gorras mujer', 'color-prod-10', 'talla-prod-10')">Comprar <i class="fas fa-shopping-cart"></i></button>
+                        <button class="btn-talla" onclick="verificarTalla('Gorras mujer', 'S, M, L')"><i class="fas fa-ruler-horizontal"></i> Tallas</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <footer class="main-footer" id="contacto">
+        <div class="footer-content">
+            
+            <div class="footer-section contact-info">
+                <h3 class="footer-brand">Urban Fit</h3>
+                <p>Estilo moderno, cómodo y versátil. Ropa ideal para tu vida activa, ya sea programando o jugando fútbol.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:info@urbanfit.co" class="contact-link email-link">
+                        <i class="fas fa-envelope"></i> urbanfitcalimoda@gmail.com
+                    </a>
+                    <a href="https://wa.me/573150921114?text=Hola,%20estoy%20interesado/a%20en%20los%20productos%20de%20Urban%20Fit." 
+                       target="_blank" class="contact-link whatsapp-footer-link">
+                        <i class="fab fa-whatsapp"></i> Chatea con Nosotros
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section oferta-container" id="promociones">
+                <h3>¡Ofertas de la Semana! ✨</h3>
+                
+                <div class="promo-box" onclick="showDynamicAlert('info', '¡Excelente elección! La PROMO 1 aplica automáticamente al añadir los productos al carrito.')">
+                    <p><strong>PROMO 1: Combo Tech-Goal 👕 + 👖</strong></p>
+                    <span>15% DE DESCUENTO en Jean + Camiseta</span>
+                    <i class="fas fa-percent"></i>
+                </div>
+                
+                <div class="promo-box" onclick="showDynamicAlert('info', 'La PROMO 2 te da 30% de descuento en el segundo artículo (Vestido) al comprar la Blusa.')">
+                    <p><strong>PROMO 2: Look Elegante 👚 + 👗</strong></p>
+                    <span>30% OFF en el 2º Artículo</span>
+                    <i class="fas fa-gift"></i>
+                </div>
+            </div>
+            
+            <div class="footer-section social-media">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#hombre"><i class="fas fa-chevron-right"></i> Moda Hombre</a></li>
+                    <li><a href="#mujer"><i class="fas fa-chevron-right"></i> Moda Mujer</a></li>
+                    <li><a href="#" onclick="openCartModal()"><i class="fas fa-shopping-bag"></i> Ver Carrito</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Políticas de Envío</a></li>
+                </ul>
+                
+                <h3>Síguenos</h3>
+                <div class="social-icons-wrapper">
+                    <a href="https://www.instagram.com/urbanfitcalimoda?igsh=MWZxaGNqYmI0a3NxYw==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Urban Fit. Todos los derechos reservados. | Programado con pasión por un futuro desarrollador.
+        </div>
+    </footer>
+    <a href="https://wa.me/573150921114?text=Hola,%20estoy%20interesado/a%20en%20los%20productos%20de%20Urban%20Fit." 
+       target="_blank" class="float-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeCartModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-shopping-cart"></i> 
+                <h2>Tu Carrito de Compras</h2>
+            </div>
+            
+            <div id="cart-items-container">
+                </div>
+            
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Total Estimado:</span>
+                    <span id="cart-total-price" class="total-price-value">$ 0 COP</span>
+                </div>
+                <button class="btn-checkout" onclick="openCheckoutModal()">
+                    Finalizar Compra <i class="fas fa-credit-card"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content welcome-content">
+            <span class="close-button" onclick="closeWelcomeModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-rocket"></i> 
+                <h2>¡Bienvenido/a a Urban Fit!</h2>
+            </div>
+            <div class="modal-body welcome-message">
+                <p>🚀 Gracias por visitar nuestro Catálogo O/I 2025.</p>
+                <p>Sabemos que te gusta la **programación** y el **fútbol**, por eso diseñamos ropa con el equilibrio perfecto entre **estilo urbano, comodidad tecnológica y rendimiento deportivo**.</p>
+                <p>Explora nuestras colecciones y no olvides revisar la sección de **Promociones** al final de la página.</p>
+                <button class="btn-accept" onclick="closeWelcomeModal()">¡Comprar Ahora!</button>
+            </div>
+        </div>
+    </div>
+    <div id="dynamicAlertModal" class="modal dynamic-alert">
+        <div class="modal-content dynamic-content">
+            <div class="alert-icon">
+                <i id="dynamic-alert-icon" class="fas fa-info-circle"></i> 
+                <h3 id="dynamic-alert-title">Alerta</h3>
+            </div>
+            <p id="dynamic-alert-message">Este es un mensaje de alerta.</p>
+            <button class="btn-accept btn-small" onclick="closeDynamicAlertModal()">Entendido</button>
+        </div>
+    </div>
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-content">
+            <span class="close-button" onclick="closeCheckoutModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-lock"></i> 
+                <h2>Proceso de Pago Seguro</h2>
+            </div>
+            <div class="modal-body checkout-form">
+                <p class="checkout-total-display">Total a Pagar: <span id="checkout-total-price-value" class="total-price-value">$ 0 COP</span></p>
+
+                <p>¡Solo un paso más! Completa tus datos de envío y elige tu método de pago.</p>
+                
+                <form id="payment-form">
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="text" placeholder="Dirección de Envío Completa" required>
+                    
+                    <label for="payment-method">Método de Pago:</label>
+                    <select id="payment-method" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="card"><i class="fas fa-credit-card"></i> Tarjeta de Crédito/Débito</option>
+                        <option value="pse"><i class="fas fa-university"></i> PSE (Transferencia Bancaria)</option>
+                        <option value="nequi"><i class="fas fa-mobile-alt"></i> Nequi / Daviplata</option>
+                    </select>
+                    
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+
+                    <button type="submit" class="btn-complete-purchase">
+                        Pagar y Finalizar <i class="fas fa-arrow-circle-right"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="checkout-footer">
+                <p><i class="fas fa-shield-alt"></i> Transacción 100% segura. Envíos gratis a partir de $60.000 COP.</p>
+            </div>
+        </div>
+    </div>
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content confirmation-content">
+            <span class="close-button" onclick="closeConfirmationModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i> 
+                <h2>¡Compra Exitosa!</h2>
+            </div>
+            <div class="modal-body confirmation-body">
+                <p>Tu pedido ha sido procesado con éxito. ¡Gracias por elegir Urban Fit!</p>
+                
+                <div class="confirmation-summary">
+                    <p><strong>Total Pagado:</strong> <span id="conf-total-price" class="total-price-value">$ 0 COP</span></p>
+                    <p><strong>Método de Pago:</strong> <span id="conf-payment-method">Tarjeta de Crédito</span></p>
+                    <p><strong>Número de Pedido:</strong> <span id="conf-order-id">UF-2025-XXXX</span></p>
+                </div>
+                
+                <p class="reembolso-note">
+                    <strong>Importante:</strong> Guarda este comprobante. Es tu **factura electrónica** y es *obligatoria* para cualquier proceso de cambio o **reembolso**.
+                </p>
+                
+                <button class="btn-download-invoice" onclick="downloadInvoice()">
+                    <i class="fas fa-file-invoice"></i> Descargar Factura Electrónica
+                </button>
+            </div>
+            <div class="checkout-footer">
+                <p><i class="fas fa-truck"></i> Tu pedido será despachado en las próximas 24 horas.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script> 
+</body>
+</html>

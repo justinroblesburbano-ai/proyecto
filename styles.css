@@ -1,0 +1,958 @@
+/* Variables de Diseño Mejoradas */
+:root {
+    --color-primario: #2c3e50;    /* Azul Oscuro (Casi Negro) - Fuerte y moderno */
+    --color-secundario: #34495e;  /* Azul Petróleo - Fondo de secciones */
+    --color-acento: #e67e22;      /* Naranja/Terracota - Cállido y visible */
+    --color-acento-hover: #d35400; /* Naranja más oscuro */
+    --color-talla: #3498db;       /* Azul Claro (Tallas) */
+    --color-precio: #27ae60;      /* Verde Esmeralda (Precios) */
+    --color-fondo-claro: #f4f6f7; /* Fondo general (no blanco puro) */
+    --color-card-fondo: #ffffff;
+    --color-texto-claro: #ecf0f1;
+    --color-whatsapp: #25D366;    /* Verde WhatsApp */
+    --color-peligro: #e74c3c;     /* Rojo (Eliminar) */
+    --color-confirmacion: #2ecc71; /* Verde (Éxito) */
+    --color-informacion: #3498db;  /* Azul (Información/Tallas) */ 
+    --sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --sombra-profunda: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos Generales y Tipografía */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-primario);
+    margin: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease; 
+}
+
+/* --- NAV BAR, LOGO y CARRITO --- */
+.navbar {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--sombra-profunda);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+.navbar.scrolled {
+    padding: 10px 40px; 
+    background-color: var(--color-primario);
+}
+.nav-brand {
+    font-size: 0; 
+}
+/* INICIO DE CÓDIGO ACTUALIZADO PARA LOGO GRANDE Y CIRCULAR */
+.logo {
+    height: 70px; 
+    width: 70px; /* Asegura el mismo ancho y alto para el círculo */
+    border-radius: 50%; /* Propiedad clave para hacerlo circular */
+    object-fit: cover; /* Asegura que la imagen llene el círculo sin distorsión */
+    transition: transform 0.3s ease;
+}
+/* FIN DE CÓDIGO ACTUALIZADO */
+.logo:hover {
+    transform: scale(1.05);
+}
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 30px;
+}
+.nav-links a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent; 
+}
+.nav-links a:hover {
+    color: var(--color-acento);
+    border-bottom: 2px solid var(--color-acento);
+}
+.cart-link {
+    background-color: var(--color-acento); 
+    padding: 5px 12px;
+    border-radius: 20px; 
+    margin-left: 30px !important;
+    transition: background-color 0.3s ease;
+}
+.cart-link:hover {
+    background-color: var(--color-acento-hover);
+}
+.cart-link a {
+    color: white !important;
+    border-bottom: none !important;
+}
+#cart-counter {
+    font-weight: 700;
+    color: white; 
+    background-color: #ffc107; 
+    border-radius: 50%;
+    padding: 2px 7px;
+    margin-left: 5px;
+}
+/* -------------------------------------- */
+
+
+/* Contenedor Principal y Header */
+.catalogo-container {
+    max-width: 1200px;
+    margin: 40px auto; 
+    background-color: var(--color-card-fondo);
+    box-shadow: var(--sombra-profunda);
+    border-radius: 12px;
+    padding: 50px;
+}
+header {
+    text-align: center;
+    margin-bottom: 70px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid var(--color-acento);
+    position: relative;
+}
+header h1 {
+    font-size: 3.5em;
+    color: var(--color-primario);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+header p {
+    font-size: 1.2em;
+    color: #555;
+    font-weight: 400;
+    margin-top: 15px;
+}
+/* Animación de la decoración del header */
+.header-decoration {
+    font-weight: 700;
+    color: var(--color-acento);
+    white-space: nowrap;
+    overflow: hidden; 
+    display: inline-block;
+    border-right: .15em solid var(--color-primario);
+    animation: 
+        typing 3.5s steps(7, end) infinite,
+        blink-caret .75s step-end infinite;
+    width: 0;
+}
+@keyframes typing { from { width: 0 } to { width: 4.5em } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--color-primario); } }
+
+
+.seccion {
+    margin-bottom: 80px;
+    padding-top: 50px; 
+}
+.seccion h2 {
+    font-size: 2.5em;
+    color: var(--color-secundario);
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.seccion h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-acento);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Estilos de Tarjetas de Producto */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; 
+}
+.producto-card {
+    background-color: var(--color-card-fondo);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    padding: 25px;
+    transition: all 0.5s ease;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+.producto-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: var(--sombra-profunda);
+    border-color: var(--color-acento);
+}
+.producto-imagen {
+    width: calc(100% + 50px);
+    height: 320px; 
+    object-fit: cover;
+    margin: -25px 0 15px -25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0; 
+    transition: transform 0.5s ease; 
+}
+.producto-card:hover .producto-imagen {
+    transform: scale(1.03); 
+}
+.precio {
+    font-size: 2em;
+    color: var(--color-precio);
+    font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: block;
+}
+.botones-acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: auto; 
+}
+.btn-comprar {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    flex-grow: 2;
+}
+.btn-comprar:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-1px);
+}
+.btn-talla {
+    background-color: var(--color-talla);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    flex-grow: 1;
+}
+.btn-talla:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+.color-label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--color-secundario);
+}
+.color-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #fff;
+    font-size: 1em;
+    color: var(--color-primario);
+}
+
+
+/* Botón Flotante de WhatsApp */
+.float-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--color-whatsapp);
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+.float-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* --- ESTILOS DE LOS MODALES --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); 
+    backdrop-filter: blur(3px); 
+    animation: fadeIn 0.3s;
+}
+.modal-content {
+    background-color: var(--color-card-fondo);
+    margin: 5% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 600px; 
+    border-radius: 12px;
+    box-shadow: var(--sombra-profunda);
+    position: relative;
+    animation: slideInTop 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* Animaciones de Modal */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.close-button {
+    color: var(--color-primario);
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-acento);
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    color: var(--color-secundario);
+    font-size: 1.8em;
+    margin: 5px 0 0;
+}
+.modal-header i {
+    font-size: 2em;
+    color: var(--color-acento);
+}
+
+/* Estilos de los Ítems del Carrito (Añadido botón de eliminar) */
+#cart-items-container {
+    max-height: 400px; 
+    overflow-y: auto;
+    padding-right: 10px; 
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1em;
+}
+.cart-item-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+.cart-item-name {
+    font-weight: 500;
+    color: var(--color-primario);
+    flex-grow: 1;
+}
+.cart-item-price {
+    font-weight: 600;
+    color: var(--color-precio);
+    min-width: 90px;
+    text-align: right;
+}
+/* Botón de eliminar compra */
+.btn-remove {
+    background: none;
+    border: none;
+    color: var(--color-peligro);
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px 8px;
+    transition: color 0.3s;
+    flex-shrink: 0; /* Evita que el botón se comprima */
+}
+.btn-remove:hover {
+    color: var(--color-acento-hover);
+}
+.modal-footer {
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+    text-align: right;
+}
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--color-secundario);
+}
+.total-price-value {
+    color: var(--color-acento);
+}
+.btn-checkout {
+    background-color: var(--color-talla);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-checkout:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+/* ------------------------------------------------ */
+
+/* --- ESTILOS DEL MODAL DE BIENVENIDA (welcomeModal) --- */
+.welcome-content {
+    max-width: 450px; 
+    text-align: center;
+    border-left: 5px solid var(--color-acento);
+    border-right: 5px solid var(--color-acento);
+}
+.welcome-content .modal-header {
+    border-bottom: none;
+}
+.welcome-content .modal-header i {
+    color: var(--color-precio);
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.welcome-content .modal-header h2 {
+    font-size: 2em;
+    color: var(--color-primario);
+}
+.welcome-message p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+.welcome-message p strong {
+    color: var(--color-acento);
+    font-weight: 700;
+}
+.btn-accept {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-accept:hover {
+    background-color: var(--color-acento-hover);
+    transform: scale(1.05);
+}
+/* ------------------------------------------------ */
+
+/* --- ESTILOS DEL MODAL DE ALERTA DINÁMICA (dynamicAlertModal) --- */
+.dynamic-alert {
+    z-index: 2500; /* Asegurar que esté por encima de todos los demás modales */
+    background-color: rgba(0,0,0,0.3); /* Fondo más suave */
+}
+
+.dynamic-content {
+    max-width: 380px;
+    margin: 15% auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    animation: bounceIn 0.5s;
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.dynamic-content .alert-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.dynamic-content .alert-icon i {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+.dynamic-content .alert-icon h3 {
+    font-size: 1.6em;
+    margin: 0;
+    font-weight: 700;
+}
+.dynamic-content p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #555;
+}
+.btn-small {
+    padding: 10px 20px !important;
+    font-size: 1em !important;
+}
+
+/* Clases de estado dinámico */
+/* Éxito: Añadir al carrito, Descarga de factura */
+.dynamic-content.success .alert-icon i {
+    color: var(--color-confirmacion);
+}
+.dynamic-content.success .alert-icon h3 {
+    color: var(--color-confirmacion);
+}
+
+/* Error/Advertencia: Faltan tallas, inventario bajo, etc. */
+.dynamic-content.warning .alert-icon i {
+    color: var(--color-acento); /* Naranja */
+}
+.dynamic-content.warning .alert-icon h3 {
+    color: var(--color-acento);
+}
+
+/* Error/Peligro: No se pudo completar */
+.dynamic-content.error .alert-icon i {
+    color: var(--color-peligro); /* Rojo */
+}
+.dynamic-content.error .alert-icon h3 {
+    color: var(--color-peligro);
+}
+
+/* Información: Verificar talla, Promociones */
+.dynamic-content.info .alert-icon i {
+    color: var(--color-informacion); /* Azul */
+}
+.dynamic-content.info .alert-icon h3 {
+    color: var(--color-informacion);
+}
+
+/* Botón de acción dentro del alert */
+.dynamic-content .btn-accept {
+    background-color: var(--color-primario);
+}
+.dynamic-content .btn-accept:hover {
+    background-color: var(--color-secundario);
+}
+/* ------------------------------------------------ */
+
+
+/* --- ESTILOS DEL MODAL DE CHECKOUT/PAGO (checkoutModal) --- */
+.checkout-content {
+    max-width: 500px;
+    border-top: 5px solid var(--color-talla);
+}
+.checkout-content .modal-header i {
+    color: var(--color-talla);
+}
+.checkout-total-display {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-primario);
+    text-align: center;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+}
+.checkout-total-display .total-price-value {
+    color: var(--color-peligro); /* Rojo para resaltar el pago */
+    font-size: 1.1em;
+}
+.checkout-form input[type="text"], 
+.checkout-form input[type="email"],
+.checkout-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+.checkout-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-secundario);
+}
+.payment-icons {
+    text-align: center;
+    margin: 15px 0 25px 0;
+}
+.payment-icons i {
+    font-size: 2.5em;
+    margin: 0 10px;
+    color: var(--color-talla);
+    opacity: 0.8;
+}
+.btn-complete-purchase {
+    width: 100%;
+    background-color: var(--color-precio); /* Verde para la acción final */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-complete-purchase:hover {
+    background-color: #2ecc71; 
+    transform: translateY(-2px);
+}
+.checkout-footer {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+    margin-top: 20px;
+}
+.checkout-footer i {
+    color: var(--color-acento);
+    margin-right: 5px;
+}
+/* ------------------------------------------------ */
+
+
+/* --- ESTILOS DEL MODAL DE CONFIRMACIÓN (confirmationModal) --- */
+.confirmation-content {
+    max-width: 450px;
+    text-align: center;
+    border-top: 5px solid var(--color-confirmacion); 
+}
+.confirmation-content .modal-header i {
+    color: var(--color-confirmacion);
+    font-size: 3em;
+}
+.confirmation-content .modal-header h2 {
+    color: var(--color-confirmacion);
+}
+.confirmation-body {
+    padding: 20px 0;
+}
+.confirmation-summary {
+    background-color: #f7f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+.confirmation-summary p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+.confirmation-summary strong {
+    color: var(--color-primario);
+}
+.reembolso-note {
+    font-size: 0.95em;
+    color: var(--color-peligro); /* Rojo para resaltar la importancia */
+    background-color: #fce4e4;
+    border: 1px solid var(--color-peligro);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+.btn-download-invoice {
+    width: 100%;
+    background-color: var(--color-acento); 
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-download-invoice:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+.btn-download-invoice i {
+    margin-right: 10px;
+}
+/* ------------------------------------------------ */
+
+
+/* --- PIE DE PÁGINA (MEJORADO) --- */
+.main-footer {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    padding: 60px 0 0; 
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; 
+    flex-wrap: wrap; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.footer-section h3 {
+    font-size: 1.4em;
+    color: var(--color-acento);
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+.footer-brand {
+    font-size: 2em !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px;
+    border-bottom: none !important;
+    margin-bottom: 15px !important;
+}
+.contact-links {
+    margin-top: 20px;
+}
+.contact-link {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.3s, transform 0.2s;
+    font-size: 1.05em;
+}
+.contact-link i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.contact-link:hover {
+    color: var(--color-acento);
+    transform: translateX(5px);
+}
+.whatsapp-footer-link {
+    background-color: var(--color-whatsapp);
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white !important;
+    display: inline-flex; 
+    margin-top: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.whatsapp-footer-link:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+.oferta-container {
+    background-color: #3b5067; 
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #5a748c; 
+}
+.oferta-container h3 {
+    color: #ffc107; 
+    border-bottom: 2px solid #ffc107;
+}
+.promo-box {
+    background-color: #2c3e50;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--color-acento);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.promo-box:hover {
+    background-color: #34495e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.promo-box p {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-texto-claro);
+}
+.promo-box span {
+    display: block;
+    font-size: 0.9em;
+    color: #ffc107;
+    font-style: italic;
+    margin-top: 5px;
+}
+.promo-box i {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 2.5em;
+    opacity: 0.1;
+    color: white;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+.footer-section ul li a:hover {
+    color: var(--color-acento);
+}
+.footer-section ul li a i {
+    font-size: 0.8em;
+    margin-right: 8px;
+    color: var(--color-acento);
+}
+.social-icons-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.social-media .social-icon {
+    font-size: 1.8em;
+    color: var(--color-texto-claro);
+    transition: color 0.3s, transform 0.2s;
+}
+.social-media .social-icon:hover {
+    color: var(--color-acento);
+    transform: scale(1.1);
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    background-color: #1f2a36; 
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .catalogo-container {
+        padding: 30px 20px;
+    }
+    .footer-content {
+        gap: 30px;
+        padding: 0 30px 30px;
+    }
+}
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column; 
+    }
+    .catalogo-container {
+        padding: 20px 15px;
+    }
+    .botones-acciones {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    .btn-comprar, .btn-talla {
+        flex-grow: 1; 
+        width: 100%;
+    }
+    .float-whatsapp {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
+    .modal-content {
+        margin: 20% 10px; 
+        padding: 20px;
+    }
+    .cart-item {
+        flex-direction: row;
+        align-items: center; 
+        flex-wrap: nowrap;
+    }
+    .cart-item-info {
+        width: auto;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 5px;
+    }
+    .cart-item-name {
+        max-width: 180px; 
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    .cart-item-price {
+        align-self: flex-start;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .btn-remove {
+        padding: 0;
+        margin-left: 10px; 
+    }
+    .footer-content {
+        flex-direction: column;
+        padding: 0 20px 30px;
+    }
+    .footer-section {
+        min-width: 100%;
+    }
+}
